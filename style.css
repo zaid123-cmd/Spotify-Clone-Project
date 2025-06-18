@@ -6,8 +6,9 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  /* font-family: "Aboreto" , sans-serif; */
+  box-sizing: border-box;
 }
+
 
 #spotifylogo:hover {
   background-color: #ffffff;
@@ -21,11 +22,24 @@
 }
 
 body {
-  background-color: black;
+  /* margin: 0;padding: 0;box-sizing: border-box; */
+  /* background-color: black; */
+  background: linear-gradient(
+          -45deg,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000
+        );
+        /* backdrop-filter: blur(10px); */
   color: #ffffff;
 }
 
 .container {
+  margin-top: -16px;
   display: flex;
   flex-direction: row;
 }
@@ -51,10 +65,12 @@ body {
 }
 
 .nav {
-  background-color: #121212;
+  /* background-color: #121212; */
+  background-color: rgba(255, 255, 255, 0.278);
+
   width: 343px;
   height: 100px;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 7px;
 }
 
@@ -65,13 +81,16 @@ body {
 .hometext {
   margin: 0px 11px;
   font-size: 15px;
-  top: 41px;
+  top: 52px;
+  text-decoration: none;
+  list-style: none;
+  color: white;
   position: absolute;
   cursor: pointer;
 }
 
 .searchtext {
-  top: 73px;
+  top: 83px;
   position: absolute;
   cursor: pointer;
 }
@@ -89,7 +108,7 @@ body {
 
 .plus {
   position: absolute;
-  top: 118px;
+  top: 140px;
   left: 318px;
   width: 25px;
   height: 25px;
@@ -104,10 +123,11 @@ body {
 }
 
 .libContent {
-  background-color: #121212;
+  /* background-color: #121212; */
+   background-color: rgba(255, 255, 255, 0.278);
   width: 343px;
   height: 600px;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 7px;
 }
 
@@ -123,7 +143,7 @@ body {
 .songList > ul {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 20px;
   z-index: 1;
 }
 
@@ -132,10 +152,11 @@ body {
   list-style: none;
   padding: 1px;
   display: flex;
-  gap: 12px;
+  gap: 18px;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #121212;
+  /* background-color: #121212; */
+   background-color: rgba(255, 255, 255, 0.278);
   align-items: center;
   border-radius: 3px;
   border: 1px solid rgba(128, 128, 128, 0.429);
@@ -164,21 +185,22 @@ body {
   position: relative;
   top: 5.4em;
   left: 12px;
-  color: gray;
+  color: white;
   gap: 8px;
   font-size: 9px;
 }
 
 .footer > div > a {
-  color: gray;
+  color: white;
 }
 
 
 
 .right {
-  background-color: #121212;
+  /* background-color: #121212; */
+   background-color: rgba(255, 255, 255, 0.278);
   width: 80vw;
-  height: 100vh;
+  height: 706px;
   margin: 7px 0px 0px 0px;
   border-radius: 20px;
   /* position: relative; */
@@ -191,7 +213,8 @@ body {
   justify-content: space-between;
   height: 50px;
   border-radius: 20px;
-  background-color: #65646461;
+  /* background-color: #65646461; */
+   background-color: rgba(255, 255, 255, 0.278);
 }
 
 .arrows > svg {
@@ -248,7 +271,8 @@ body {
   margin: 5px;
   cursor: pointer;
   transition: 0.4s ease;
-  background-color: rgba(110, 110, 110, 0.104);
+  /* background-color: rgba(110, 110, 110, 0.104); */
+   background-color: rgba(255, 255, 255, 0.278);
 }
 
 .play {
@@ -323,7 +347,8 @@ body {
   /* flex-direction: row; */
   width: clamp(75%, 50%, 100%);
   margin: auto;
-  background-color: #313131;
+  /* background-color: #313131; */
+   background-color: rgba(255, 255, 255, 0.278);
   position: fixed;
   /* position: relative; */
   /* justify-content: space-evenly; */
@@ -383,8 +408,8 @@ body {
 
 .seekbar {
   width: 95%;
-  border: 2px solid rgb(31 216 96);
-  background-color: rgb(31 216 96);
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
   /* position: relative; */
   /* text-align: center; */
   /* align-items: center; */

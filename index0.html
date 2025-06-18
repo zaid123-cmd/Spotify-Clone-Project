@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @keyframes bg {
+        0% {
+          background-position: 0%, 50%;
+        }
+
+        50% {
+          background-position: 100% 100%;
+        }
+
+        100% {
+          background-position: 0% 100%;
+        }
+      }
+
+      body {
+        /* background-color: #121212; */
+        background: linear-gradient(
+          -45deg,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000
+        );
+        backdrop-filter: blur(10px);
+        /* filter: blur(3px); */
+      }
+
+      .container {
+        display: flex;
+        font-family: "Zen Dots", cursive;
+        color: #ffffff;
+        gap: 0px;
+      }
+
+      .left {
+        width: 50%;
+        height: 600px;
+
+        /* background-color: #3e3d3d; */
+      }
+      .right {
+        width: 50%;
+        height: 600px;
+        /* background-color: #3e3d3d; */
+      }
+
+      #introtext {
+        text-align: center;
+        font-size: 1rem;
+        margin: 20px 0;
+        font-family: "Zen Dots", cursive;
+        color: #ffffff;
+      }
+      /* 
+      #3d-spline {
+        position: absolute;
+        right: 0;
+      } */
+
+      #startbtn {
+        background-color: #03cb00;
+        color: #ffffff;
+        border: none;
+        width: 100%;
+        z-index: 100;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: "Zen Dots", cursive;
+        border: #ffffff 2px solid;
+      }
+
+      #startbtn:hover {
+        background-color: #028400;
+        transition: background-color 0.3s ease;
+      }
+
+      .green {
+        position: absolute;
+        width: 175px;
+        top: 576px;
+        filter: blur(4px);
+        z-index: 100;
+        right: 0px;
+        height: 53px;
+        background-color: #028400;
+      }
+
+      #main-heading {
+        font-size: 6.3rem;
+        text-align: center;
+        margin-top: 105px;
+        z-index: 100;
+        letter-spacing: 5px;
+      }
+
+      
+      .header {
+        /* background: linear-gradient(to right, #000000, #03cb00, #000000);
+        background-size: 400% 400%;
+        animation: bg 5s ease infinite;
+        transition: all ease; */
+        /* filter: blur(1px); */
+        backdrop-filter: blur(40px);
+        margin: auto;
+        margin-top: 12px;
+        width: 60%;
+        border-radius: 30px;
+        font-weight: lighter;
+        border: #ffffff 2px solid;
+      }
+
+      #navbar {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 10px 0;
+        color: white;
+        font-family: "Zen Dots", cursive;
+        position: sticky;
+        z-index: 11;
+        font-size: 0.9rem;
+      }
+
+      #navbar li > a {
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #navbar li > a:hover {
+        color: hsl(119, 96%, 44%);
+        transition: transform color 0.3s ease;
+        transform: scale(1.1);
+      }
+
+      #ascend {
+        position: absolute;
+        left: 35px;
+      }
+
+      #player {
+        position: absolute;
+        right: 50px;
+        /* letter-spacing: 12px; */
+      }
+
+      #music {
+        position: absolute;
+        bottom: 125px;
+        right: 250px;
+        font-size: 13.4rem;
+        letter-spacing: 28px;
+      }
+
+      #gr-head {
+        z-index: -10;
+        right: 673px;
+        position: absolute;
+        height: 199px;
+        top: 66px;
+      }
+
+      /* .about{
+        width: 100%;
+        height: 100vh;
+      } */
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <!-- <h1 id="introtext">
+          Welcome to my Music Player, Music that ascends you to a different
+          dimension
+        </h1> -->
+        <ul id="navbar">
+          <li><a href="">Home</a></li>
+          <li><a href="index.html">Albums</a></li>
+          <li><a href="">Search</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact Me</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+    <div class="container">
+      <div class="left">
+        <h2 id="main-heading">
+          <span id="ascend">ASCEND</span>
+          <span id="music">MUSIC</span>
+          <span id="player">PLAYER</span>
+        </h2>
+      </div>
+
+      
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"
+      ></script>
+      <spline-viewer
+        style="position: absolute; right: 0; bottom: 0; z-index: 0; height: 90%"
+        url="https://prod.spline.design/TX2y1vDyjpQaPide/scene.splinecode"
+      ></spline-viewer>
+     
+
+    </div>
+    </main>
+
+    
+      <div class="footer">
+        <button id="startbtn">Start Listening</button>
+      </div>
+   
+
+    <div class="green"></div>
+
+
+    <section>
+
+      <div class="about">
+
+        <h1>  ABOUT</h1>
+        <p>
+          This is a music player that allows you to listen to your favorite
+          tracks. It has a sleek design and is easy to use. You can search for
+          songs, create playlists, and enjoy a seamless listening experience.
+          The player supports various audio formats and provides high-quality
+          sound. Whether you're at home or on the go, this music player is your
+          perfect companion for all your musical needs.
+        </p>
+      </div>
+
+
+
+
+
+    </section>
+    
+  </body>
+</html>

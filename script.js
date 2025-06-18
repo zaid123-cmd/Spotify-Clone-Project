@@ -42,7 +42,7 @@ async function getSongs(folder) {
                                 <img style="filter: invert(1);" src="svg/music.svg" alt="music">
                                 <div class="songinfo">
                                     <div> ${song.replaceAll("%20", " ")}</div>
-                                    <div>Zaid</div>
+                                    
                                 </div>
                                 <div class="playbtn">
                                     <div>
@@ -317,6 +317,8 @@ async function main() {
   await getSongs("songs/");
   //   console.log(songs)
   playMusic(songs[0], true);
+
+
 
 }
 
