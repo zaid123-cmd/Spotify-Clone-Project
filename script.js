@@ -204,6 +204,9 @@ function eventListner(){
     document.querySelector(".left").style.opacity = "0";
   });
 
+
+ 
+
   
   play.addEventListener("click", () => {
     if (currentSong.paused) {

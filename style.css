@@ -2,16 +2,21 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 
+ @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+
+
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Zen Dots", cursive;
   box-sizing: border-box;
 }
 
 
-#spotifylogo:hover {
-  background-color: #ffffff;
+#ascend-logo-pic:hover {
+  /* background-color: #5cd43d; */
+  box-shadow: 0px 0px 10px #5cd43d;
   border-radius: 5px;
   filter: invert(0);
 }
@@ -34,7 +39,7 @@ body {
           #03cb00,
           #000000
         );
-        /* backdrop-filter: blur(10px); */
+        backdrop-filter: blur(10px);
   color: #ffffff;
 }
 
@@ -55,12 +60,13 @@ body {
 
 .left {
   /* transition: all 0.7s ease; */
-  transition: all 0.7s cubic-bezier(0, 0, 0.08, 0.88);
+  transition: all 0.7s ease;
+  
 }
 
 .navimg > img {
-  filter: invert(1);
-  width: 80px;
+  width: 30px;
+  height: inherit;
   cursor: pointer;
 }
 
@@ -74,6 +80,9 @@ body {
   margin: 7px;
 }
 
+.navimg{
+  height: 38px;
+}
 .nav > * {
   padding: 3px;
 }
@@ -81,7 +90,7 @@ body {
 .hometext {
   margin: 0px 11px;
   font-size: 15px;
-  top: 52px;
+  top: 56px;
   text-decoration: none;
   list-style: none;
   color: white;
@@ -447,9 +456,20 @@ body {
   .left {
     position: absolute;
     left: -120vw;
-    background-color: #171616fe;
+    background: linear-gradient(
+          -45deg,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000,
+          #03cb00,
+          #000000
+        );
+        backdrop-filter: blur(100px);
     z-index: 1;
     width: 354px;
+    border-radius: 19px;
   }
 
   #songname {
@@ -537,11 +557,18 @@ body {
   .songduration{
     text-align: center;
   }
-  
-  
 
-
+  
+  .songbuttons span > img {
+    padding: 0px 0px;
+    width: 40px;
+  }
 }
+  
+  
+
+
+
 
 @media (max-width: 400px) {
   .cardContainer {
@@ -556,6 +583,6 @@ body {
 
   .songbuttons span > img {
     padding: 0px 0px;
-    width: 20px;
+    width: 40px;
   }
 }
