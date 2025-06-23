@@ -3,6 +3,7 @@ let allSongsData = {};
 let songs = [];
 let currFolder = "";
 
+// Helper to format time
 function secondstominutes(seconds) {
   let minutes = Math.floor(seconds / 60);
   let remainingseconds = Math.floor(seconds % 60);
@@ -18,7 +19,7 @@ async function loadSongsData() {
 // Get list of songs for a specific folder (artist)
 function getSongs(folderName) {
   currFolder = folderName;
-  songs = allSongsData[folderName]; // this is the list of mp3 file names (WITH .mp3)
+  songs = allSongsData[folderName]; // list of mp3 file names (with .mp3)
 
   let songUL = document.querySelector(".songList ul");
   songUL.innerHTML = ""; // clear the list
@@ -43,10 +44,9 @@ function getSongs(folderName) {
   return songs;
 }
 
-
 // Play a given song
 function playMusic(track, pause = false) {
-  currentSong.src = `/songs/${currFolder}/` + track; // track already contains ".mp3"
+  currentSong.src = `/songs/${currFolder}/` + track; // FIXED path
   if (!pause) {
     currentSong.play();
     play.src = "svg/pause.svg";
@@ -56,10 +56,7 @@ function playMusic(track, pause = false) {
 
 // Attach event listeners
 function eventListner() {
-  // Existing hover listeners if you want to keep them
-  // ... omitted for brevity — add your existing hover code here if you like
-
-  // Volume control
+  // volume control
   document.querySelector(".volume input").addEventListener("change", (e) => {
     currentSong.volume = e.target.value / 100;
   });
@@ -103,16 +100,16 @@ function eventListner() {
     currentSong.currentTime = (percent * currentSong.duration) / 100;
   });
 
-  // Previous
+  // Previous song
   previous.addEventListener("click", () => {
-    let currentTrack = currentSong.src.split("/").pop();
+    let currentTrack = decodeURIComponent(currentSong.src.split("/").pop());
     let index = songs.indexOf(currentTrack);
     if (index > 0) playMusic(songs[index - 1]);
   });
 
-  // Next
+  // Next song
   next.addEventListener("click", () => {
-    let currentTrack = currentSong.src.split("/").pop();
+    let currentTrack = decodeURIComponent(currentSong.src.split("/").pop());
     let index = songs.indexOf(currentTrack);
     if (index < songs.length - 1) playMusic(songs[index + 1]);
   });
@@ -134,8 +131,8 @@ function eventListner() {
   Array.from(document.getElementsByClassName("card")).forEach((e) => {
     e.addEventListener('click', async (item) => {
       let folder = item.currentTarget.dataset.folder;
-      let newSongs = getSongs(folder);  // Get new list
-      playMusic(newSongs[0], true);     // Prepare first song
+      let newSongs = getSongs(folder); // Get new list
+      playMusic(newSongs[0], true);    // Prepare first song
       currentSong.play();
       play.src = "svg/pause.svg";
     });
@@ -146,8 +143,8 @@ function eventListner() {
 async function main() {
   await loadSongsData();
   eventListner();
-  getSongs('Anjum');    // Load Anjum's list on startup
-  playMusic(songs[0], true);
+  getSongs('Anjum'); // Load Anjum's list initially
+  playMusic(songs[0], true); // Load first song paused
 }
 
 main();
