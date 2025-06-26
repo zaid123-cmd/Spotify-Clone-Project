@@ -31,7 +31,7 @@ function getSongs(folderName) {
         <div class="songinfo">${song.replace(".mp3", "")}</div>
         
 <button onclick="toggleFavorite('${song.id}')">
-  💚
+ 🖤
 </button>
 
         <div class="playbtn">Play</div>
