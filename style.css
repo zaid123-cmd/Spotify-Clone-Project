@@ -245,8 +245,8 @@ body {
   color: white;
   border: none;
   border-radius: 20px;
-  width: 110px;
-  font-weight: bold;
+  width: 120px;
+  /* font-weight: bold; */
   font-size: 0.9em;
   transition: 0.3s ease;
 }

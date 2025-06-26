@@ -12,7 +12,7 @@ function secondstominutes(seconds) {
 
 // Fetch the songs.json file once at startup
 async function loadSongsData() {
-  const res = await fetch('/songs.json');
+  const res = await fetch("/songs.json");
   allSongsData = await res.json();
 }
 
@@ -29,14 +29,19 @@ function getSongs(folderName) {
       <li>
         <img style="filter: invert(1);" src="svg/music.svg" alt="music">
         <div class="songinfo">${song.replace(".mp3", "")}</div>
+        
+<button onclick="toggleFavorite('${song.id}')">
+  💚
+</button>
+
         <div class="playbtn">Play</div>
       </li>
     `;
   }
 
-  Array.from(songUL.getElementsByTagName('li')).forEach((e) => {
-    e.addEventListener('click', () => {
-      let songName = e.querySelector('.songinfo').innerText.trim() + ".mp3";
+  Array.from(songUL.getElementsByTagName("li")).forEach((e) => {
+    e.addEventListener("click", () => {
+      let songName = e.querySelector(".songinfo").innerText.trim() + ".mp3";
       playMusic(songName); // songName already contains ".mp3"
     });
   });
@@ -51,7 +56,9 @@ function playMusic(track, pause = false) {
     currentSong.play();
     play.src = "svg/pause.svg";
   }
-  document.getElementById('songname').innerText = decodeURIComponent(track.replace(".mp3", ""));
+  document.getElementById("songname").innerText = decodeURIComponent(
+    track.replace(".mp3", "")
+  );
 }
 
 // Attach event listeners
@@ -86,9 +93,11 @@ function eventListner() {
   // Time update
   currentSong.addEventListener("timeupdate", () => {
     document.querySelector(".songduration").innerText = `
-      ${secondstominutes(currentSong.currentTime)} / ${secondstominutes(currentSong.duration)}
+      ${secondstominutes(currentSong.currentTime)} / ${secondstominutes(
+      currentSong.duration
+    )}
     `;
-    document.getElementById('round').style.left = `${
+    document.getElementById("round").style.left = `${
       (currentSong.currentTime / currentSong.duration) * 100
     }%`;
   });
@@ -96,7 +105,7 @@ function eventListner() {
   // Seekbar click
   document.querySelector(".seekbar").addEventListener("click", (e) => {
     let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-    document.getElementById('round').style.left = percent + "%";
+    document.getElementById("round").style.left = percent + "%";
     currentSong.currentTime = (percent * currentSong.duration) / 100;
   });
 
@@ -129,10 +138,10 @@ function eventListner() {
 
   // Card click to switch artist
   Array.from(document.getElementsByClassName("card")).forEach((e) => {
-    e.addEventListener('click', async (item) => {
+    e.addEventListener("click", async (item) => {
       let folder = item.currentTarget.dataset.folder;
       let newSongs = getSongs(folder); // Get new list
-      playMusic(newSongs[0], true);    // Prepare first song
+      playMusic(newSongs[0], true); // Prepare first song
       currentSong.play();
       play.src = "svg/pause.svg";
     });
@@ -143,7 +152,7 @@ function eventListner() {
 async function main() {
   await loadSongsData();
   eventListner();
-  getSongs('Anjum'); // Load Anjum's list initially
+  getSongs("Kanye"); // Load Kanye's list initially
   playMusic(songs[0], true); // Load first song paused
 }
 
