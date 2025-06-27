@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">-
+<html lang="en">
+  -
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,16 +10,18 @@
   </head>
 
   <body>
-
-
     <div class="container">
       <div class="left">
         <span class="close"><img src="svg/close.svg" alt="" /></span>
         <div class="nav">
           <div class="navimg">
-            <img src="/assets/Ascend-logo.webp" id="ascend-logo-pic" alt="Logo"  />
-            <a href="index.html" style="text-decoration: none; color: inherit;">
-              <span style="position: relative; top: -14px;">ASCEND</span>
+            <img
+              src="/assets/Ascend-logo.webp"
+              id="ascend-logo-pic"
+              alt="Logo"
+            />
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <span style="position: relative; top: -14px">ASCEND</span>
             </a>
           </div>
           <div class="home">
@@ -139,9 +142,7 @@
             </div>
 
             <div class="songList">
-              <ul>
-               
-              </ul>
+              <ul></ul>
             </div>
 
             <div class="footer">
@@ -217,8 +218,28 @@
             </div>
           </div>
           <div class="sigbtn padding">
-            <button>Favorites</button>
-           
+            <button id="feedback-btn">Feedback</button>
+
+            <div class="feedbackform">
+              <form
+                id="feedback-form"
+                action="https://formspree.io/f/xqabwzyb"
+                method="POST"
+              >
+                <label>
+                  Your email:
+                  <input type="email" name="email" />
+                </label>
+                <label>
+                  Your message:
+                  <textarea
+                    name="message"
+                    placeholder="you can request a song"
+                  ></textarea>
+                </label>
+                <button style="cursor: pointer; " type="submit">Send</button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="content">
@@ -449,8 +470,6 @@
               </div>
             </div>
 
-           
-
             <div class="cardContainer">
               <div id="frank" class="card" data-folder="Frank">
                 <div class="cardimg frankclass">
@@ -494,8 +513,7 @@
               </div>
             </div>
 
-
-             <div class="cardContainer">
+            <div class="cardContainer">
               <div id="bolly" class="card" data-folder="bolly">
                 <div class="cardimg frankclass">
                   <img
@@ -504,7 +522,6 @@
                     width="200px"
                     alt="frank"
                   />
-                 
                 </div>
 
                 <div class="cardtext">
@@ -535,10 +552,6 @@
                 </svg>
               </div>
             </div>
-
-            
-
-
           </div>
         </div>
 
@@ -548,7 +561,11 @@
           </div>
 
           <div class="volume invert">
-            <img src="/svg/volume.svg" alt="volume" style="margin-bottom: -3px;"/>
+            <img
+              src="/svg/volume.svg"
+              alt="volume"
+              style="margin-bottom: -3px"
+            />
             <input id="vol" type="range" class="range" />
           </div>
 
@@ -580,13 +597,6 @@
       </div>
     </div>
 
-
-
-
-
-
-
     <script src="script.js" defer></script>
   </body>
-
 </html>

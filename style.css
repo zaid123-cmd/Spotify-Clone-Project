@@ -14,6 +14,11 @@
 }
 
 
+
+
+
+
+
 #ascend-logo-pic:hover {
   /* background-color: #5cd43d; */
   filter: invert(0);
@@ -246,22 +251,46 @@ body {
 }
 
 .sigbtn > button {
-  background-color: #3e3d3d;
+  background-color: #ffffff;
   /* color: white; */
   border: none;
   border-radius: 20px;
   width: 120px;
   /* font-weight: bold; */
   font-size: 0.9em;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sigbtn > button:hover {
   cursor: pointer;
-  color: black;
+  color: #ffffff;
   /* transform: scale(1.1); */
-  background-color: #ffffff;
+  background-color: #3e3d3d;
 }
+
+
+
+
+#feedback-form{
+  transition: all ease;
+right: 0;
+    visibility: hidden;
+    position: absolute;
+    display: flex
+;
+    height: 30vh;
+    flex-direction: column;
+    background-color: #00000072;
+    gap: 48px;
+    top: 50px;
+    width: 40vw;
+    position: absolute;
+    z-index: 111;
+    align-items: center;
+    border-radius: 9px;
+}
+
+
 
 .arrow {
   display: flex;
@@ -287,6 +316,7 @@ body {
   transition: 0.4s ease;
   /* background-color: rgba(110, 110, 110, 0.104); */
    background-color: rgba(255, 255, 255, 0.278);
+
 }
 
 .play {
@@ -529,6 +559,12 @@ body {
     margin: 0;
   }
 
+  #feedback-form {
+    width: 100vw;
+    height: 38vh;
+   
+  }
+
   .allcards {
     height: fit-content;
   }
@@ -579,6 +615,12 @@ body {
   .cardContainer {
     width: 150px;
     height: fit-content;
+  }
+
+  #feedback-form {
+    width: 100vw;
+    height: 38vh;
+   
   }
 
   .songbuttons {

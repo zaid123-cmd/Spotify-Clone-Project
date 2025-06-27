@@ -29,11 +29,6 @@ function getSongs(folderName) {
       <li>
         <img style="filter: invert(1);" src="svg/music.svg" alt="music">
         <div class="songinfo">${song.replace(".mp3", "")}</div>
-        
-<button onclick="toggleFavorite('${song.id}')">
- 🖤
-</button>
-
         <div class="playbtn">Play</div>
       </li>
     `;
@@ -63,6 +58,28 @@ function playMusic(track, pause = false) {
 
 // Attach event listeners
 function eventListner() {
+
+  //for feedback form
+
+  const feedbackBtn = document.getElementById("feedback-btn");
+    const feedbackForm = document.getElementById("feedback-form");
+    feedbackBtn.addEventListener("click", () => {
+      
+          // Toggle visibility
+          if (feedbackForm.style.visibility === "hidden") {
+            feedbackForm.style.visibility = "visible";
+          } else {
+            feedbackForm.style.visibility = "hidden";
+          }
+       
+        
+      
+    });
+  
+
+
+
+
   // volume control
   document.querySelector(".volume input").addEventListener("change", (e) => {
     currentSong.volume = e.target.value / 100;
@@ -146,6 +163,22 @@ function eventListner() {
       play.src = "svg/pause.svg";
     });
   });
+
+
+    // Autoplay: play next song automatically when current ends
+  currentSong.addEventListener("ended", () => {
+    let currentTrack = decodeURIComponent(currentSong.src.split("/").pop());
+    let index = songs.indexOf(currentTrack);
+    if (index < songs.length - 1) {
+      playMusic(songs[index + 1]);
+    } else {
+      // Optionally: reset or loop
+      // currentSong.currentTime = 0;
+      playMusic(songs[0]); // To loop to first song
+    }
+  });
+
+
 }
 
 // Main init
