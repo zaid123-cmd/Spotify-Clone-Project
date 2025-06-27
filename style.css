@@ -290,6 +290,11 @@ right: 0;
     border-radius: 9px;
 }
 
+.feedback-input{
+  color: #000000;
+  background-color: #ffffffd0;
+}
+
 
 
 .arrow {
@@ -565,6 +570,8 @@ right: 0;
    
   }
 
+
+
   .allcards {
     height: fit-content;
   }
@@ -620,7 +627,9 @@ right: 0;
   #feedback-form {
     width: 100vw;
     height: 38vh;
-   
+  }
+  .signup{
+    position: sticky;
   }
 
   .songbuttons {
