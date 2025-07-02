@@ -1,4 +1,5 @@
 let currentSong = new Audio();
+currentSong.preload = "auto";
 let allSongsData = {};
 let songs = [];
 let currFolder = "";

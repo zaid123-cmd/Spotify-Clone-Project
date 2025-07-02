@@ -13,6 +13,20 @@
   box-sizing: border-box;
 }
 
+   .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
@@ -102,7 +116,7 @@ body {
 }
 
 .hometext:hover{
-  background-color: #3e3d3d;
+  text-decoration: underline;
 }
 
 
@@ -112,6 +126,10 @@ body {
   position: absolute;
   cursor: pointer;
   color: #ffffff;
+}
+
+.searchtext:hover {
+  text-decoration: underline;
 }
 
 .libimg {
@@ -263,6 +281,7 @@ body {
 
 .sigbtn > button:hover {
   cursor: pointer;
+  text-decoration: underline;
   color: #ffffff;
   /* transform: scale(1.1); */
   background-color: #3e3d3d;

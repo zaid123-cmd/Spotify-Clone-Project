@@ -5,26 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ascend Music-Player : Music for everyone</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-   
-    
+
     <style>
 
-        @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 
-         * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      div:empty,section:empty {
+      .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+      div:empty,
+      section:empty {
         display: none;
       }
       html {
         scroll-behavior: smooth;
         /* background-attachment: fixed; */
-         background: linear-gradient(
+        background: linear-gradient(
           -45deg,
           #000000,
           #03cb00,
@@ -37,11 +53,9 @@
 
         height: 100%;
         width: 100%;
-        
       }
 
       body {
-       
         background: linear-gradient(
           -45deg,
           #000000,
@@ -54,22 +68,18 @@
         );
         /* background-attachment: fixed; */
 
-
         background-repeat: no-repeat;
         /* backdrop-filter: blur(10px); */
         height: 100vh;
-        
+
         /* filter: blur(3px); */
       }
 
-      main{
+      main {
         height: 90vh;
       }
 
-
-
-       .header {
-         
+      .header {
         backdrop-filter: blur(40px);
         margin: auto;
         height: 47px;
@@ -81,7 +91,7 @@
         border-radius: 30px;
         font-weight: lighter;
         border: #ffffff 2px solid;
-        z-index: 10 ;
+        z-index: 10;
       }
 
       #ascend-logo {
@@ -91,9 +101,9 @@
         top: -9px;
         width: 50px;
         height: 66px;
-      }            
-      
-      .hamnav{
+      }
+
+      .hamnav {
         color: #ffffff;
         font-family: "Zen Dots", cursive;
         text-align: center;
@@ -103,20 +113,17 @@
         font-size: 1.5rem;
       }
 
-      #hamlist{
+      #hamlist {
         display: flex;
         flex-direction: column;
         gap: 30px;
       }
 
-       .hamnav li > a {
+      .hamnav li > a {
         color: #ffffff;
         text-decoration: none;
         cursor: pointer;
       }
-
-
-
 
       #navbar {
         display: flex;
@@ -129,11 +136,10 @@
         z-index: 11;
 
         font-size: 0.9rem;
-        ;
       }
 
       #navbar li {
-        position: relative; 
+        position: relative;
       }
 
       #navbar li > a {
@@ -157,40 +163,33 @@
         height: 66px;
       }
 
-      .hambtn{
+      .hambtn {
         display: none;
       }
 
-      
-
-     
-      
-
-
-      .text{
-       display: flex;
-       color: #ffffff;
-       font-family: "Zen Dots", cursive;
-       max-width: 100%;
-       font-size: 7.4em;
-       gap: 1.3em;
-       margin: auto;
-         margin-top: 60px;
-       justify-content: center;
-
+      .text {
+        display: flex;
+        color: #ffffff;
+        font-family: "Zen Dots", cursive;
+        max-width: 100%;
+        font-size: 7.4em;
+        gap: 1.3em;
+        margin: auto;
+        margin-top: 60px;
+        justify-content: center;
       }
-        
+
       .music-text {
-         display: flex;
-       color: #ffffff;
-       font-family: "Zen Dots", cursive;
-       max-width: 100%;
-       font-size: 17.5em;
-    /* margin-top: -7px; */
-       letter-spacing: 18px;
-       margin: auto;
-         /* margin-top: 40px; */
-       justify-content: center;
+        display: flex;
+        color: #ffffff;
+        font-family: "Zen Dots", cursive;
+        max-width: 100%;
+        font-size: 17.5em;
+        /* margin-top: -7px; */
+        letter-spacing: 18px;
+        margin: auto;
+        /* margin-top: 40px; */
+        justify-content: center;
       }
 
       .seperation {
@@ -201,18 +200,18 @@
         /* margin-top: 20px; */
       }
 
-      #spline-model{
-          position: absolute;
-            right: 70px;
-            bottom: 0;
-            margin-right: -29px;
-            width: 90%;
-            z-index: 0;
-            height: 80%;
-            overflow: hidden;
+      #spline-model {
+        position: absolute;
+        right: 70px;
+        bottom: 0;
+        margin-right: -29px;
+        width: 90%;
+        z-index: 0;
+        height: 80%;
+        overflow: hidden;
       }
 
-       #startbtn {
+      #startbtn {
         background-color: #03cb00;
         color: #ffffff;
         border: none;
@@ -235,10 +234,7 @@
         transition: background-color 0.3s ease;
       }
 
-    
-
-     .second-section {
-
+      .second-section {
         background-repeat: no-repeat;
         /* backdrop-filter: blur(10px); */
         height: auto;
@@ -253,8 +249,6 @@
         font-family: "Zen Dots", cursive;
       }
 
-
-
       #sec-text {
         font-weight: lighter;
         font-size: 24px;
@@ -266,34 +260,34 @@
       }
 
       #about-section {
-       margin-top: 70px;
-       position: relative;
+        margin-top: 70px;
+        position: relative;
         backdrop-filter: blur(10px);
-         /* top: 45.63em; */
+        /* top: 45.63em; */
         height: auto;
         color: #ffffff;
         padding: 20px;
         text-align: center;
         font-family: "Zen Dots", cursive;
       }
-      .about>h1 {
+      .about > h1 {
         font-size: 2.5rem;
         margin-bottom: 60px;
       }
 
-      #about-text{
+      #about-text {
         font-size: 28px;
-         line-height: 60px;
-    max-width: 90%;
-    text-align: center;
-    margin: auto;
+        line-height: 60px;
+        max-width: 90%;
+        text-align: center;
+        margin: auto;
       }
 
-      #contact-section{
+      #contact-section {
         margin-top: 20px;
-       position: relative;
+        position: relative;
         backdrop-filter: blur(10px);
-         /* top: 45.63em; */
+        /* top: 45.63em; */
         height: auto;
         color: #ffffff;
         padding: 20px;
@@ -301,8 +295,6 @@
         font-family: "Zen Dots", cursive;
       }
 
-     
-      
       .wrapper {
         width: 90%;
         max-width: 1536px;
@@ -317,76 +309,73 @@
           rgba(0, 0, 0, 1) 20%,
           rgba(0, 0, 0, 1) 80%,
           rgba(0, 0, 0, 0)
-          );
+        );
+      }
+
+      @keyframes scrollLeft {
+        to {
+          left: -200px;
         }
-        
-        @keyframes scrollLeft {
-          to {
-            left: -200px;
-          }
+      }
+
+      .item {
+        width: 200px;
+        height: 200px;
+        /* background-color: red; */
+        border-radius: 6px;
+        position: absolute;
+        left: max(calc(200px * 8), 100%);
+        animation-name: scrollLeft;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .item1 {
+        animation-delay: calc(30s / 8 * (8 - 1) * -1);
+      }
+
+      .item2 {
+        animation-delay: calc(30s / 8 * (8 - 2) * -1);
+      }
+
+      .item3 {
+        animation-delay: calc(30s / 8 * (8 - 3) * -1);
+      }
+
+      .item4 {
+        animation-delay: calc(30s / 8 * (8 - 4) * -1);
+      }
+
+      .item5 {
+        animation-delay: calc(30s / 8 * (8 - 5) * -1);
+      }
+
+      .item6 {
+        animation-delay: calc(30s / 8 * (8 - 6) * -1);
+      }
+
+      .item7 {
+        animation-delay: calc(30s / 8 * (8 - 7) * -1);
+      }
+
+      .item8 {
+        animation-delay: calc(30s / 8 * (8 - 8) * -1);
+      }
+
+      @media (max-width: 1230px) {
+        .text {
+          font-size: 6.5em;
         }
-        
-        .item {
-          width: 200px;
-          height: 200px;
-          /* background-color: red; */
-          border-radius: 6px;
-          position: absolute;
-          left: max(calc(200px * 8), 100%);
-          animation-name: scrollLeft;
-          animation-duration: 30s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
+        .music-text {
+          font-size: 15em;
         }
-        
-        .item1 {
-          animation-delay: calc(30s / 8 * (8 - 1) * -1);
+        body {
+          width: auto;
         }
-        
-        .item2 {
-          animation-delay: calc(30s / 8 * (8 - 2) * -1);
-        }
-        
-        .item3 {
-          animation-delay: calc(30s / 8 * (8 - 3) * -1);
-        }
-        
-        .item4 {
-          animation-delay: calc(30s / 8 * (8 - 4) * -1);
-        }
-        
-        .item5 {
-          animation-delay: calc(30s / 8 * (8 - 5) * -1);
-        }
-        
-        .item6 {
-          animation-delay: calc(30s / 8 * (8 - 6) * -1);
-        }
-        
-        .item7 {
-          animation-delay: calc(30s / 8 * (8 - 7) * -1);
-        }
-        
-        .item8 {
-          animation-delay: calc(30s / 8 * (8 - 8) * -1);
-        }
-        
-        
-        @media (max-width: 1230px){
-          .text {
-            font-size: 6.5em;
-          }
-          .music-text {
-            font-size: 15em;
-          }
-          body{
-            width: auto;
-          }
-        }
-      
-      
-      
-         @media (max-width: 1400px) {
+      }
+
+      @media (max-width: 1400px) {
         .text {
           font-size: 6vw;
         }
@@ -394,7 +383,7 @@
           font-size: 8vw;
           letter-spacing: normal;
         }
-        
+
         /* #navbar {
           flex-direction: column;
           align-items: center;
@@ -402,25 +391,23 @@
       }
 
       @media screen and (max-width: 768px) {
-
-        #navbar{
+        #navbar {
           display: none;
         }
 
-        main{
+        main {
           height: 62vh;
         }
 
-        #startbtn{
+        #startbtn {
           bottom: 20px;
         }
 
-
-        #spline-model{
+        #spline-model {
           right: 30px;
-        bottom: 0px;
-        top: 162px;
-        height: 60%;
+          bottom: 0px;
+          top: 162px;
+          height: 60%;
         }
 
         #ham {
@@ -433,7 +420,7 @@
           transition: all 2s ease;
         }
 
-        .hambtn{
+        .hambtn {
           transition: all 2s ease;
           opacity: 1;
           position: absolute;
@@ -446,10 +433,10 @@
 
         #ascend-logo {
           display: block;
-        position: absolute;
-        /* right: 20px; */
-        left: 32px;
-        top: -9px;
+          position: absolute;
+          /* right: 20px; */
+          left: 32px;
+          top: -9px;
         }
         .text {
           font-size: 7vw;
@@ -459,47 +446,42 @@
           letter-spacing: 0;
         }
 
-         .second-section {
+        .second-section {
           top: 0.63em;
           /* margin-top: 750px; */
           /* height: 100vh; */
           /* padding: 10px; */
         }
 
-        #spline{
+        #spline {
           height: 30%;
         }
 
-        .second>h1 {
+        .second > h1 {
           font-size: 1.5rem;
           /* margin-top: 20px; */
         }
 
-       
-
         #sec-text {
-        font-weight: lighter;
-        line-height: normal;
-        font-size: 19px;
-        padding: 10px;
-        text-align: center;
-        max-width: 90%;
-        margin: auto;
-      }
+          font-weight: lighter;
+          line-height: normal;
+          font-size: 19px;
+          padding: 10px;
+          text-align: center;
+          max-width: 90%;
+          margin: auto;
+        }
 
         #about-section {
           height: auto;
           top: 0.63em;
           padding: 20px;
-
         }
 
         #contact-section {
-            height: auto;
+          height: auto;
           top: 0.63em;
           padding: 20px;
-
-
         }
 
         #about-text {
@@ -512,52 +494,49 @@
           margin: auto; */
         }
 
-        .seperation{
+        .seperation {
           position: relative;
           top: 0rem;
         }
-
       }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="hambtn">
+      <div class="hamnav">
+        <ul id="hamlist">
+          <li><a href="#home-section">Home</a></li>
+          <li><a href="index1.html">Albums</a></li>
+          <li><a href="#about-section">About</a></li>
+          <li><a href="#contact-section">Contact</a></li>
+          <li>
+            <img
+              src="assets/hamclose.jpg"
+              alt="hamclose"
+              class="hamclose"
+              width="50px"
+              style="filter: invert(1)"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
 
-   <div class="hambtn"> 
-
-          <div class="hamnav">
-            <ul id="hamlist">
-              <li><a href="#home-section">Home</a></li>
-              <li><a href="index1.html">Albums</a></li>
-              <li><a href="#about-section">About</a></li>
-              <li><a href="#contact-section">Contact</a></li>
-              <li><img src="assets/hamclose.jpg" alt="hamclose" class="hamclose" width="50px" style="filter: invert(1);"></li>
-            </ul>
-          </div>
-          
-        </div>
-
-   <header>
-      <div class="header">
-
-       
+    <header>
+      <div class="header fade-in">
         <img
-        id="ascend-logo"
+          id="ascend-logo"
           src="assets/Ascend-logo.webp"
           alt="Ascend Music Player Logo"
-          
         />
-        <img src="assets/finalham.webp" alt="ham" width="50px" height="50px" id="ham" class="ham" />
-
+        <img
+          src="assets/finalham.webp"
+          alt="ham"
+          width="50px"
+          height="50px"
+          id="ham"
+          class="ham"
+        />
 
         <ul id="navbar">
           <li><a href="#navbar">Home</a></li>
@@ -565,138 +544,136 @@
           <li><a href="#about-section">About</a></li>
           <li><a href="#contact-section">Contact</a></li>
           <!-- <li><a href="">About</a></li> -->
-          
         </ul>
       </div>
     </header>
 
     <main id="home-section">
+      <div class="text fade-in">
+        <span>ASCEND</span>
+        <span>PLAYER</span>
+      </div>
+      <div class="music-text fade-in" >
+        <span>MUSIC</span>
+      </div>
 
-        <div class="text">
-            <span>ASCEND</span>
-            <span>PLAYER</span>
-        </div>
-        <div class=" music-text">
-            <span>MUSIC</span>
-        </div>
-
-        <div class="spline">
-
-           
+      <div class="spline">
         <spline-viewer
-        id="spline-model"
-         
-            
-
-          
-
+          id="spline-model"
           url="https://prod.spline.design/TX2y1vDyjpQaPide/scene.splinecode"
         ></spline-viewer>
-
-
-        </div>
-
+      </div>
     </main>
 
-  
-
-     <section>
+    <section class="fade-in">
       <a href="index1.html"><button id="startbtn">Start Listening</button></a>
     </section>
 
-      <div class="seperation">
+    <div class="seperation"></div>
 
-    </div>
-
-
-    <section class="second-section" > 
-      <div class="second" >
+    <section class="second-section" >
+      <div class="second" data-aos="fade-up">
         <h1 id="second-heading">Discover Music that ascends you</h1>
         <div class="wrapper">
-  <div class="item item1"><img src="assets/frank.webp" alt="" width="100%;"></div>
-  <div class="item item2"><img src="assets/juice.jpeg" alt="" width="100%;"></div>
-  <div class="item item3"><img src="assets/kanye01.jpg" alt="" width="100%;"></div>
-  <div class="item item4"><img src="assets/kendrick.jpeg" alt="" width="100%;"></div>
-  <div class="item item5"><img src="assets/talha.webp" alt="" width="100%;"></div>
-  <div class="item item6"><img src="assets/travis.jpg" alt="" width="100%;"></div>
-  <div class="item item7"><img src="assets/yunus.jpg" alt="" width="100%;"></div>
-  <div class="item item8"><img src="assets/kanye01.jpg" alt="" width="100%;"></div>
-</div>
-        
-        <p id="sec-text" >
-          Welcome to Ascend Music Player, your gateway to a transcendent musical experience. Immerse yourself in a world of sound that elevates your spirit and transports you to new dimensions. Explore our curated albums, discover hidden gems, and let the music guide you on a journey of ascension.
+          <div class="item item1">
+            <img src="assets/frank.webp" alt="" width="100%;" />
+          </div>
+          <div class="item item2">
+            <img src="assets/juice.jpeg" alt="" width="100%;" />
+          </div>
+          <div class="item item3">
+            <img src="assets/kanye01.jpg" alt="" width="100%;" />
+          </div>
+          <div class="item item4">
+            <img src="assets/kendrick.jpeg" alt="" width="100%;" />
+          </div>
+          <div class="item item5">
+            <img src="assets/talha.webp" alt="" width="100%;" />
+          </div>
+          <div class="item item6">
+            <img src="assets/travis.jpg" alt="" width="100%;" />
+          </div>
+          <div class="item item7">
+            <img src="assets/yunus.jpg" alt="" width="100%;" />
+          </div>
+          <div class="item item8">
+            <img src="assets/kanye01.jpg" alt="" width="100%;" />
+          </div>
+        </div>
+
+        <p id="sec-text">
+          Welcome to Ascend Music Player, your gateway to a transcendent musical
+          experience. Immerse yourself in a world of sound that elevates your
+          spirit and transports you to new dimensions. Explore our curated
+          albums, discover hidden gems, and let the music guide you on a journey
+          of ascension.
         </p>
       </div>
     </section>
 
-    <div class="seperation">
+    <div class="seperation"></div>
 
-    </div>
+    <section id="about-section">
+      <div class="about" data-aos="fade-up">
+        <h1>About</h1>
 
-  <section id="about-section">
-    <div class="about">
-      <h1>About</h1>
+        <p id="about-text">
+          Ascend Music Player is designed to elevate your music listening
+          experience. This is a project that I made to showcase my skillset in
+          frontend development. The albums are limited and specific to my
+          listening habits. So, if you like the choice of the songs we have a
+          similar taste in music. If you liked this project then notify me about
+          it through mail,and if you didnt like it, do the same, notify me about
+          it.
+        </p>
+      </div>
+    </section>
 
-      
+    <div class="seperation"></div>
 
-      <p id="about-text">
-        Ascend Music Player is designed to elevate your music listening experience. This is a project that I made to showcase my skillset in frontend development. The albums are limited and specific to my listening habits. So, if you like the choice of the songs we have a similar taste in music. If you liked this project then notify me about it through mail,and if you didnt like it, do the same, notify me about it. 
-      </p>
-    </div>
+    <section id="contact-section" data-aos="fade-up">
+      <h1>Contact Me</h1>
+      <div class="icons">
+        <a href="mailto:zaidgafurinamdar@gmail.com" target="_blank">
+          <img src="assets/newemail.webp" alt="Email" width="50px" />
+        </a>
+        <a
+          href="https://github.com/zaid123-cmd/Ascend-Music-Player.git"
+          target="_blank"
+        >
+          <img src="assets/newgit.webp" alt="Github" width="50px" />
+        </a>
+        <a href="https://www.linkedin.com/in/zaid-791894213/" target="_blank">
+          <img src="assets/linkedin.webp" alt="LinkedIn" width="50px" />
+        </a>
+      </div>
+    </section>
 
-  </section>   
+    <script defer
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"
+    ></script>
 
-  <div class="seperation">
-
-    </div>
-
-  <section id="contact-section">
-
-    <h1>Contact Me</h1>
-    <div class="icons">
-      <a href="mailto:zaidgafurinamdar@gmail.com" target="_blank">
-        <img src="assets/newemail.webp" alt="Email" width="50px" />
-      </a>
-      <a href="https://github.com/zaid123-cmd/Ascend-Music-Player.git" target="_blank">
-        <img src="assets/newgit.webp" alt="Github" width="50px" />
-      </a>
-      <a href="https://www.linkedin.com/in/zaid-791894213/" target="_blank">
-        <img src="assets/linkedin.webp" alt="LinkedIn" width="50px" />
-      </a>
-    </div>
-    
-  
-  
-  </section>
-
-    
-
-
-  <script
-          type="module"
-          src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"
-        ></script>
-
-
-         <script>
-
+    <script>
       // alert("Click on the hamburger icon to open the menu");
 
-      
       document.querySelector("#ham").addEventListener("click", () => {
-    document.querySelector(".hambtn").style.display = "block";
-   
+        document.querySelector(".hambtn").style.display = "block";
+      });
 
-  });
-
-  document.querySelector(".hamclose").addEventListener("click", () => {
-    document.querySelector(".hambtn").style.display = "none";
-
-  });
-
-
+      document.querySelector(".hamclose").addEventListener("click", () => {
+        document.querySelector(".hambtn").style.display = "none";
+      });
     </script>
 
+    <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in milliseconds
+    once: false,     // whether animation should happen only once
+  });
+</script>
 
-</body>
+  </body>
 </html>
